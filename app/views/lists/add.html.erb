@@ -1,0 +1,8 @@
+<div class="main">
+	<%= render "shared/errmsgs" %>
+	
+	<%= form_tag( "/lists/add", :method => :post ) do %>
+		<%= text_area :list, :str, :size => "10x10", :class => "list_add", :maxlength => 255 %>
+		<%= submit_tag "Add", :class => "button list_add" %>
+	<% end %>
+</div>

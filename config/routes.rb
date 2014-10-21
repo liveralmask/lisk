@@ -4,9 +4,23 @@ Lisk::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  
+  root	"accounts#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  
+  # Lisk
+  get	"lists"						=> "lists#index"
+  get	"lists/add"					=> "lists#add"
+  post	"lists/add"					=> "lists#add"
+  get	"lists/delete/:id"			=> "lists#delete"
+  get	"lists/update/:id"			=> "lists#update"
+  post	"lists/update/:id"			=> "lists#update"
+
+  # OmniAuth
+  get	"auth/:provider/callback"	=> "accounts#create"
+  get	"login/:provider"			=> "accounts#login"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

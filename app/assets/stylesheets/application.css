@@ -11,3 +11,163 @@
  *= require_self
  *= require_tree .
  */
+
+text.error {
+	color:					red;
+	font-size:				24px;
+}
+
+div.header {
+	position:				fixed;
+	width:					100%;
+	height:					35px;
+	background-color:		white;
+	z-index:				1000;
+	top:					0;
+}
+
+div.header_dummy {
+	position:				relative;
+	width:					100%;
+	height:					35px;
+	top:					-8px;
+}
+
+div.main {
+	position:				relative;
+	padding-top:			1px;
+	padding-bottom:			1px;
+	overflow:				scroll;
+}
+
+div.info {
+	position:				relative;
+}
+
+text.info_label {
+	font-size:				20px;
+	font-weight:			bold;
+}
+
+text.info {
+	font-size:				14px;
+}
+
+div.footer {
+	position:				fixed;
+	width:					100%;
+	height:					35px;
+	background-color:		white;
+	z-index:				1000;
+	bottom:					0;
+}
+
+div.footer_dummy {
+	position:				relative;
+	width:					100%;
+	height:					35px;
+	bottom:					-8px;
+}
+
+div.page {
+	position:				fixed;
+	height:					35px;
+	bottom:					0;
+	left:					42%;
+	float:					left;
+}
+
+nav.pagination {
+}
+
+nav > span > a {
+	width:					30px;
+	height:					30px;
+	text-align:				center;
+	box-shadow:				0 1px 5px 1px rgba(0, 0, 0, 0.5),
+							0 1px 3px rgba(255, 255, 255, 0.9) inset,
+							0 -1px 3px rgba(0, 0, 0, 0.1) inset;
+	text-decoration:		none;
+	font-size:				18px;
+	color:					#FFFFFF;
+	
+	padding:				5px;
+	margin:					0 10px;
+	
+	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+}
+
+nav > span > a:hover {
+	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+}
+
+nav > span.current {
+	font-weight:			bold;
+}
+
+a.button {
+	width:					30px;
+	height:					30px;
+	display:				block;
+	text-align:				center;
+	border-radius:			25px;
+	box-shadow:				0 1px 5px 1px rgba(0, 0, 0, 0.5),
+							0 1px 3px rgba(255, 255, 255, 0.9) inset,
+							0 -1px 3px rgba(0, 0, 0, 0.1) inset;
+	text-decoration:		none;
+	font-size:				18px;
+	color:					#FFFFFF;
+}
+
+input.button {
+	width:					100px;
+	height:					30px;
+	display:				block;
+	text-align:				center;
+	border-radius:			25px;
+	box-shadow:				0 1px 5px 1px rgba(0, 0, 0, 0.5),
+							0 1px 3px rgba(255, 255, 255, 0.9) inset,
+							0 -1px 3px rgba(0, 0, 0, 0.1) inset;
+	text-decoration:		none;
+	font-size:				18px;
+	color:					#FFFFFF;
+}
+
+a.button_small {
+	width:					20px;
+	height:					20px;
+	border-radius:			15px;
+	font-size:				13px;
+}
+
+div.home {
+	width:					30px;
+	left:					0;
+}
+
+a.home {
+	background-image:		-moz-linear-gradient( top, #228B22, #2E8B57 );
+}
+
+a.home:hover {
+	background-image:		-moz-linear-gradient( top, #2E8B57, #228B22 );
+}
+
+div.icon {
+	position:				relative;
+	width:					30px;
+	top:					-28px;
+	left:					50px;
+}
+
+img.icon {
+	width:					30px;
+	height:					30px;
+}
+
+div.name {
+	position:				relative;
+	width:					200px;
+	top:					-62px;
+	left:					80px;
+}

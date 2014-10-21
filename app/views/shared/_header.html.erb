@@ -1,0 +1,13 @@
+<% if ! @account.nil? %>
+<div class="header">
+	<div class="home"><%= link_to "H", { :controller => "lists" }, { :class => "button home" } %></div>
+	<div class="icon"><img class="icon" src="<%= @account[ :icon_path ] %>"></div>
+	<div class="name"><text class="name"><%= @account[ :name ] %></text></div>
+	
+	<% if ! params.key?( "action" ) || "add" != params[ "action" ] %>
+	<div class="list_add"><%= link_to "+", { :controller => "lists", :action => "add" }, { :class => "button list_add" } %></div>
+	<% end %>
+</div>
+
+<div class="header_dummy"></div>
+<% end %>

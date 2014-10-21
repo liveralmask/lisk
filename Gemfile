@@ -43,3 +43,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "rails_autolink"
+
+gem "kaminari"
+
+gem "figaro"
+
+gem 'omniauth'
+gem 'omniauth-twitter'

@@ -1,0 +1,7 @@
+<% if ! @errmsgs.empty? %>
+<div class="error">
+<% @errmsgs.each{|name, msg| %>
+	<text class="error"><%= msg.join( "<br />" ) %></text>
+<% } %>
+</div>
+<% end %>

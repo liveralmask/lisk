@@ -1,0 +1,127 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.list_add {
+	position:				relative;
+	width:					30px;
+	top:					-90px;
+	left:					95%;
+}
+
+a.list_add {
+	background-image:		-moz-linear-gradient( top, #0000FF, #0000CD );
+}
+
+a.list_add:hover {
+	background-image:		-moz-linear-gradient( top, #0000CD, #0000FF );
+}
+
+textarea.list_add {
+	width:					99%;
+}
+
+input.list_add {
+	background-image:		-moz-linear-gradient( top, #0000FF, #0000CD );
+	margin-top:				50px;
+	margin-left:			auto;
+	margin-right:			auto;
+}
+
+input.list_add:hover {
+	background-image:		-moz-linear-gradient( top, #0000CD, #0000FF );
+}
+
+div.list_content {
+	margin:					5px 0px;
+	padding:				5px 10px;
+	border:					solid 2px gray;
+	border-radius:			25px;
+	-moz-border-radius:		25px;
+}
+
+pre.list_content {
+	color:					black;
+	font-size:				20px;
+	overflow:				auto;
+	width:					100%;
+}
+
+div.list_content_footer {
+	height:					20px;
+	margin:					5px;
+}
+
+div.list_update {
+	position:				relative;
+	width:					20px;
+	left:					10%;
+}
+
+a.list_update {
+	background-image:		-moz-linear-gradient( top, #FFFF00, #FFA500 );
+}
+
+a.list_update:hover {
+	background-image:		-moz-linear-gradient( top, #FFA500, #FFFF00 );
+}
+
+textarea.list_update {
+	width:					99%;
+}
+
+input.list_update {
+	background-image:		-moz-linear-gradient( top, #FFFF00, #FFA500 );
+	margin-top:				50px;
+	margin-left:			auto;
+	margin-right:			auto;
+}
+
+input.list_update:hover {
+	background-image:		-moz-linear-gradient( top, #FFA500, #FFFF00 );
+}
+
+div.list_delete {
+	position:				relative;
+	width:					20px;
+	top:					-20px;
+	left:					88%;
+}
+
+a.list_delete {
+	background-image:		-moz-linear-gradient( top, #FF0000, #DC143C );
+}
+
+a.list_delete:hover {
+	background-image:		-moz-linear-gradient( top, #DC143C, #FF0000 );
+}
+
+div.list_move_top {
+	position:				relative;
+	width:					30px;
+	top:					2px;
+	left:					2%;
+}
+
+a.list_move_top {
+	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+}
+
+a.list_move_top:hover {
+	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+}
+
+div.list_move_bottom {
+	position:				relative;
+	width:					30px;
+	top:					-28px;
+	left:					95%;
+}
+
+a.list_move_bottom {
+	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+}
+
+a.list_move_bottom:hover {
+	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+}
