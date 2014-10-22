@@ -95,10 +95,12 @@ nav > span > a {
 	margin:					0 10px;
 	
 	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+	background-image:		-webkit-linear-gradient( top, #696969, #000000 );
 }
 
 nav > span > a:hover {
 	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+	background-image:		-webkit-linear-gradient( top, #000000, #696969 );
 }
 
 nav > span.current {
@@ -147,10 +149,12 @@ div.home {
 
 a.home {
 	background-image:		-moz-linear-gradient( top, #228B22, #2E8B57 );
+	background-image:		-webkit-linear-gradient( top, #228B22, #2E8B57 );
 }
 
 a.home:hover {
 	background-image:		-moz-linear-gradient( top, #2E8B57, #228B22 );
+	background-image:		-webkit-linear-gradient( top, #2E8B57, #228B22 );
 }
 
 div.icon {

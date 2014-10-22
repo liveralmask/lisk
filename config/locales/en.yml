@@ -24,8 +24,8 @@ en:
   
   views:
     pagination:
-      first:    "<<"
-      last:    ">>"
+      first:    "1 <<"
+      last:    ">> "
       previous:  "<"
       next:    ">"
       truncate:  ""
