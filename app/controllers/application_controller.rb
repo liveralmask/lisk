@@ -17,9 +17,6 @@ class ApplicationController < ActionController::Base
 		}
 		
 		@page = nil
-		
-		# TEST
-#		@account = { :id => 1, :icon_path => "https://www.google.com/images/google_favicon_128.png", :name => "テスト" }
 	end
 	
 	def br( str )
@@ -47,16 +44,14 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def login_account
-		if cookies[ :login_key ].nil?
-			redirect_to "/"
-			return
-		end
+		return redirect_to "/" if cookies[ :login_id ].nil?
 		
-		account = Account.where( [ "login_key = ?", cookies[ :login_key ] ] ).first
+		hash = parse_login_id( cookies[ :name ], cookies[ :login_id ] )
+		
+		account = Account.where( [ "account_key = ? AND login_key = ?", hash[ "account_key" ], hash[ "login_key" ] ] ).first
 		if account.nil?
-			cookies.delete( :login_key )
-			redirect_to "/"
-			return
+			cookies.delete( :login_id )
+			return redirect_to "/"
 		end
 		
 		@account = {
@@ -64,5 +59,24 @@ class ApplicationController < ActionController::Base
 			:icon_path	=> cookies[ :icon_path ],
 			:name		=> cookies[ :name ]
 		}
+	end
+	
+protected
+	def create_login_id_secret( name )
+		"#{name}_#{name.size}"
+	end
+	
+	def create_login_id( name, account_key, login_key )
+		str = JSON.generate({
+			:account_key		=> account_key,
+			:login_key			=> login_key
+		})
+		secret = create_login_id_secret( name )
+		ActiveSupport::MessageEncryptor.new( secret, cipher: "bf-cbc" ).encrypt_and_sign( str )
+	end
+	
+	def parse_login_id( name, login_id )
+		secret = create_login_id_secret( name )
+		JSON.parse( ActiveSupport::MessageEncryptor.new( secret, cipher: "bf-cbc" ).decrypt_and_verify( login_id ) )
 	end
 end

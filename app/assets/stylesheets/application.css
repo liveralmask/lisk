@@ -175,3 +175,18 @@ div.name {
 	top:					-62px;
 	left:					80px;
 }
+
+div.login {
+}
+
+a.login {
+	width:					200px;
+	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+	background-image:		-webkit-linear-gradient( top, #696969, #000000 );
+}
+
+a.login:hover {
+	width:					200px;
+	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+	background-image:		-webkit-linear-gradient( top, #000000, #696969 );
+}

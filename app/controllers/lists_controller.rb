@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
 	def index
 		@lists = List.where( [ "account_id = ?", 1 ] ).order( "id ASC" ).page( param_page )
+		return redirect_to "/lists/add" if @lists.empty?
 		
 		@page = @lists
 		
@@ -13,10 +14,7 @@ class ListsController < ApplicationController
 			break if ! params?( [ "list", "str" ] )
 			
 			list = List.new( :account_id => @account[ :id ], :str => params[ "list" ][ "str" ] )
-			if list.save
-				redirect_to "/lists#listBottom"
-				return
-			end
+			return redirect_to "/lists#listBottom" if list.save
 			
 			@errmsgs = list.errors.messages
 		end while false
@@ -25,19 +23,14 @@ class ListsController < ApplicationController
 	def update
 		@errmsgs = []
 		begin
-			if ! params.key?( "id" )
-				redirect_to "/lists"
-				return
-			end
+			return redirect_to "/lists" if ! params.key?( "id" )
 			
 			@list = List.find_by_id( params[ "id" ] )
 			
 			break if ! params?( [ "list", "str" ] )
 			
 			@list.str = params[ "list" ][ "str" ]
-			if @list.save
-				redirect_to "/lists"
-			end
+			return redirect_to "/lists" if @list.save
 			
 			@errmsgs = @list.errors.messages
 		end while false
@@ -46,6 +39,6 @@ class ListsController < ApplicationController
 	def delete
 		List.delete( params[ "id" ] ) if params.key?( "id" )
 		
-		redirect_to "/lists"
+		return redirect_to "/lists"
 	end
 end
