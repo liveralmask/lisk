@@ -1,7 +1,5 @@
-<% if ! @errmsgs.empty? %>
+<% if ! errmsgs.empty? && errmsgs.key?( name ) %>
 <div class="error">
-<% @errmsgs.each{|name, msg| %>
-	<text class="error"><%= msg.join( "<br />" ) %></text>
-<% } %>
+	<text class="error"><%= errmsgs[ name ].join( "<br />" ) %></text>
 </div>
 <% end %>

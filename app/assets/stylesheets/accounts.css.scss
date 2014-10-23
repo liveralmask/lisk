@@ -1,3 +1,18 @@
 // Place all the styles related to the accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.login {
+}
+
+a.login {
+	width:					200px;
+	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+	background-image:		-webkit-linear-gradient( top, #696969, #000000 );
+}
+
+a.login:hover {
+	width:					200px;
+	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+	background-image:		-webkit-linear-gradient( top, #000000, #696969 );
+}

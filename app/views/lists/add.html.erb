@@ -1,5 +1,5 @@
 <div class="main">
-	<%= render "shared/errmsgs" %>
+	<%= render partial: "shared/errmsgs", locals: { errmsgs: @errmsgs, name: :str } %>
 	
 	<%= form_tag( "/lists/add", :method => :post ) do %>
 		<%= text_area :list, :str, :size => "10x10", :class => "list_add", :maxlength => 255 %>

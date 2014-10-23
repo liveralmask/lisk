@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
 	def index
-		@lists = List.where( [ "account_id = ?", 1 ] ).order( "id ASC" ).page( param_page )
+		@lists = List.where( [ "account_id = ?", @account[ :id ] ] ).order( "id ASC" ).page( param_page )
 		return redirect_to "/lists/add" if @lists.empty?
 		
 		@page = @lists

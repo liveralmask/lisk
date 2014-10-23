@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
 	
-	helper_method		:br
-	
 	before_filter		:login_account
 	
 	def initialize
@@ -17,10 +15,6 @@ class ApplicationController < ActionController::Base
 		}
 		
 		@page = nil
-	end
-	
-	def br( str )
-		str.gsub( /\r\n|\r|\n/, "<br />" )
 	end
 	
 	def params?( keys )
@@ -63,7 +57,19 @@ class ApplicationController < ActionController::Base
 	
 protected
 	def create_login_id_secret( name )
-		"#{name}_#{name.size}"
+		Digest::SHA512::hexdigest( name )
+	end
+	
+	def encrypt( cipher, str, secret )
+		cipher.encrypt
+		cipher.pkcs5_keyivgen( secret )
+		cipher.update( str ) + cipher.final
+	end
+	
+	def decrypt( cipher, str, secret )
+		cipher.decrypt
+		cipher.pkcs5_keyivgen( secret )
+		cipher.update( str ) + cipher.final
 	end
 	
 	def create_login_id( name, account_key, login_key )
@@ -72,11 +78,11 @@ protected
 			:login_key			=> login_key
 		})
 		secret = create_login_id_secret( name )
-		ActiveSupport::MessageEncryptor.new( secret, cipher: "bf-cbc" ).encrypt_and_sign( str )
+		encrypt( OpenSSL::Cipher.new( "AES-256-CBC" ), str, secret )
 	end
 	
 	def parse_login_id( name, login_id )
 		secret = create_login_id_secret( name )
-		JSON.parse( ActiveSupport::MessageEncryptor.new( secret, cipher: "bf-cbc" ).decrypt_and_verify( login_id ) )
+		JSON.parse( decrypt( OpenSSL::Cipher.new( "AES-256-CBC" ), login_id, secret ) )
 	end
 end
