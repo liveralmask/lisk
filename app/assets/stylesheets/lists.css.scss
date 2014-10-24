@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.list_add {
-	position:				relative;
-	width:					30px;
-	top:					-90px;
-	left:					90%;
+@media only screen and (min-width: 481px) {
+	div.list_add {
+		position:				relative;
+		width:					30px;
+		top:					-90px;
+		left:					89%;
+	}
+}
+@media only screen and (max-width: 480px) {
+	div.list_add {
+		position:				relative;
+		width:					30px;
+		top:					100px;
+		left:					89%;
+	}
 }
 
 a.list_add {
@@ -127,7 +137,7 @@ div.list_move_bottom {
 	position:				relative;
 	width:					30px;
 	top:					-28px;
-	left:					90%;
+	left:					89%;
 }
 
 a.list_move_bottom {
