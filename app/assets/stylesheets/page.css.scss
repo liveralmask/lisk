@@ -1,9 +1,20 @@
-div.page {
-	position:				fixed;
-	height:					35px;
-	bottom:					0;
-	left:					36%;
-	float:					left;
+@media only screen and (min-width: 481px) {
+	div.page {
+		position:				fixed;
+		height:					35px;
+		bottom:					0;
+		left:					36%;
+		float:					left;
+	}
+}
+@media only screen and (max-width: 480px) {
+	div.page {
+		position:				fixed;
+		height:					35px;
+		bottom:					0;
+		left:					100px;
+		float:					left;
+	}
 }
 
 nav.pagination {
