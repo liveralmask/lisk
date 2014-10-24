@@ -15,7 +15,7 @@
 		position:				relative;
 		width:					30px;
 		top:					-90px;
-		left:					87%;
+		left:					86%;
 	}
 }
 
@@ -30,7 +30,7 @@ a.list_add:hover {
 }
 
 textarea.list_add {
-	width:					90%;
+	width:					99%;
 	font-size:				100%;
 }
 
@@ -52,7 +52,6 @@ div.list_content {
 	padding:				5px 10px;
 	border:					solid 2px gray;
 	border-radius:			25px;
-	-moz-border-radius:		25px;
 }
 
 pre.list_content {
@@ -82,7 +81,7 @@ a.list_update:hover {
 }
 
 textarea.list_update {
-	width:					90%;
+	width:					99%;
 	font-size:				100%;
 }
 
@@ -133,11 +132,21 @@ a.list_move_top:hover {
 	background-image:		-webkit-linear-gradient( top, #000000, #696969 );
 }
 
-div.list_move_bottom {
-	position:				relative;
-	width:					30px;
-	top:					-28px;
-	left:					89%;
+@media only screen and (min-width: 481px) {
+	div.list_move_bottom {
+		position:				relative;
+		width:					30px;
+		top:					-28px;
+		left:					96%;
+	}
+}
+@media only screen and (max-width: 480px) {
+	div.list_move_bottom {
+		position:				relative;
+		width:					30px;
+		top:					-28px;
+		left:					86%;
+	}
 }
 
 a.list_move_bottom {
