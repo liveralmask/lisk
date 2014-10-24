@@ -22,6 +22,8 @@ div.main {
 	padding-top:			1px;
 	padding-bottom:			1px;
 	overflow:				scroll;
+	font-size:				20px;
+	width:					96%;
 }
 
 a.button {

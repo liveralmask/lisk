@@ -6,7 +6,7 @@ div.list_add {
 	position:				relative;
 	width:					30px;
 	top:					-90px;
-	left:					95%;
+	left:					90%;
 }
 
 a.list_add {
@@ -20,7 +20,8 @@ a.list_add:hover {
 }
 
 textarea.list_add {
-	width:					99%;
+	width:					90%;
+	font-size:				100%;
 }
 
 input.list_add {
@@ -46,9 +47,7 @@ div.list_content {
 
 pre.list_content {
 	color:					black;
-	font-size:				20px;
 	overflow:				auto;
-	width:					100%;
 }
 
 div.list_content_footer {
@@ -73,7 +72,8 @@ a.list_update:hover {
 }
 
 textarea.list_update {
-	width:					99%;
+	width:					90%;
+	font-size:				100%;
 }
 
 input.list_update {
@@ -93,7 +93,7 @@ div.list_delete {
 	position:				relative;
 	width:					20px;
 	top:					-20px;
-	left:					88%;
+	left:					85%;
 }
 
 a.list_delete {
@@ -127,7 +127,7 @@ div.list_move_bottom {
 	position:				relative;
 	width:					30px;
 	top:					-28px;
-	left:					95%;
+	left:					90%;
 }
 
 a.list_move_bottom {
