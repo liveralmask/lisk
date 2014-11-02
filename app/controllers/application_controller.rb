@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def login_account
-		return redirect_to "/" if cookies[ :login_id ].nil?
+		return redirect_to "/" if cookies[ :login_id ].nil? || cookies[ :name ].nil?
 		
 		hash = parse_login_id( cookies[ :name ], cookies[ :login_id ] )
 		
