@@ -5,7 +5,7 @@
 			<text class="list_content"><%= auto_link( html_escape( list.str ), :html => { :target => "_blank" } ) %></text>
 			
 			<div class="list_content_footer">
-				<div class="list_update"><%= link_to "U", { :controller => "lists", :action => "update", :id => list.id }, { :class => "button list_update" } %></div>
+				<div class="list_update"><%= link_to "U", { :controller => "lists", :action => "update", :id => list.id, :page => @page.current_page }, { :class => "button list_update" } %></div>
 				<div class="list_delete"><%= link_to "X", { :controller => "lists", :action => "delete", :id => list.id }, { :class => "button list_delete", :data => { :confirm => "Sure you want to delete?" } } %></div>
 			</div>
 		</div>

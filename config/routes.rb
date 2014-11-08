@@ -15,8 +15,8 @@ Lisk::Application.routes.draw do
   get	"lists/add"					=> "lists#add"
   post	"lists/add"					=> "lists#add"
   get	"lists/delete/:id"			=> "lists#delete"
-  get	"lists/update/:id"			=> "lists#update"
-  post	"lists/update/:id"			=> "lists#update"
+  get	"lists/update/:id/:page"	=> "lists#update"
+  post	"lists/update/:id/:page"	=> "lists#update"
 
   # OmniAuth
   get	"auth/:provider/callback"	=> "accounts#create"

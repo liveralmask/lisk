@@ -26,11 +26,12 @@ class ListsController < ApplicationController
 			return redirect_to "/lists" if ! params.key?( "id" )
 			
 			@list = List.find_by_id( params[ "id" ] )
+			@back_page = params[ "page" ].to_i
 			
 			break if ! params?( [ "list", "str" ] )
 			
 			@list.str = params[ "list" ][ "str" ]
-			return redirect_to "/lists" if @list.save
+			return redirect_to "/lists?page=#{@back_page}" if @list.save
 			
 			@errmsgs = @list.errors.messages
 		end while false

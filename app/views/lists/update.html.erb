@@ -1,7 +1,7 @@
 <div class="main">
 	<%= render partial: "shared/errmsgs", locals: { errmsgs: @errmsgs, name: :str } %>
 	
-	<%= form_tag( "/lists/update/#{@list.id}", :method => :post ) do %>
+	<%= form_tag( "/lists/update/#{@list.id}/#{@back_page}", :method => :post ) do %>
 		<%= text_area :list, :str, :size => "10x10", :class => "list_update", :maxlength => 255 %>
 		<%= submit_tag "Update", :class => "button list_update" %>
 	<% end %>
