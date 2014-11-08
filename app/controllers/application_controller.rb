@@ -33,8 +33,12 @@ class ApplicationController < ActionController::Base
 		params[ key ]
 	end
 	
-	def param_page
-		page = param( "page", 1 )
+	def param_page( last_page )
+		page = param( "page", "1" ).to_i
+		page = last_page + page if page <= 0
+		return 1 if page < 1
+		return last_page if last_page < page
+		page
 	end
 	
 	def login_account

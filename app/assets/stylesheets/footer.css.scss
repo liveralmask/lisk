@@ -13,3 +13,47 @@ div.footer_dummy {
 	height:					35px;
 	bottom:					-8px;
 }
+
+div.move_top {
+	position:				relative;
+	width:					30px;
+	top:					2px;
+	left:					2%;
+}
+
+a.move_top {
+	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+	background-image:		-webkit-linear-gradient( top, #696969, #000000 );
+}
+
+a.move_top:hover {
+	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+	background-image:		-webkit-linear-gradient( top, #000000, #696969 );
+}
+
+@media only screen and (min-width: 481px) {
+	div.move_bottom {
+		position:				relative;
+		width:					30px;
+		top:					-28px;
+		left:					96%;
+	}
+}
+@media only screen and (max-width: 480px) {
+	div.move_bottom {
+		position:				relative;
+		width:					30px;
+		top:					-28px;
+		left:					86%;
+	}
+}
+
+a.move_bottom {
+	background-image:		-moz-linear-gradient( top, #696969, #000000 );
+	background-image:		-webkit-linear-gradient( top, #696969, #000000 );
+}
+
+a.move_bottom:hover {
+	background-image:		-moz-linear-gradient( top, #000000, #696969 );
+	background-image:		-webkit-linear-gradient( top, #000000, #696969 );
+}
