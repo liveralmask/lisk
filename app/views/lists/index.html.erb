@@ -2,7 +2,9 @@
 <div class="main">
 	<% @lists.each{|list| %>
 		<div class="list_content">
-			<text class="list_content"><%= auto_link( html_escape( list.str ), :html => { :target => "_blank" } ) %></text>
+			<% list.str.split( /\r\n|\r|\n/ ).each{|str| %>
+			<text class="list_content"><%= auto_link( html_escape( str ), :html => { :target => "_blank" } ) %></text><br />
+			<% } %>
 			
 			<div class="list_content_footer">
 				<div class="list_update"><%= link_to "U", { :controller => "lists", :action => "update", :id => list.id, :page => @page.current_page }, { :class => "button list_update" } %></div>
