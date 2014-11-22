@@ -1,6 +1,7 @@
 <% if ! @lists.empty? %>
 <div class="main">
 	<% @lists.each{|list| %>
+		<a name="id_<%= list.id %>"></a>
 		<div class="list_content">
 			<% list.str.split( /\r\n|\r|\n/ ).each{|str| %>
 			<text class="list_content"><%= auto_link( html_escape( str ), :html => { :target => "_blank" } ) %></text><br />

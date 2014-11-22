@@ -31,7 +31,7 @@ class ListsController < ApplicationController
 			break if ! params?( [ "list", "str" ] )
 			
 			@list.str = params[ "list" ][ "str" ]
-			return redirect_to "/lists?page=#{@back_page}" if @list.save
+			return redirect_to "/lists?page=#{@back_page}#id_#{@list.id}" if @list.save
 			
 			@errmsgs = @list.errors.messages
 		end while false
