@@ -40,6 +40,7 @@ class ListsController < ApplicationController
 	def delete
 		List.delete( params[ "id" ] ) if params.key?( "id" )
 		
-		return redirect_to "/lists"
+		back_page = params[ "page" ].to_i
+		return redirect_to "/lists?page=#{back_page}"
 	end
 end
